@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="816.0" styleClass="anchor" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jamessipac.controller.PresupuestoController">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="200.0" style="-fx-background-color: #f85305;">
+         <children>
+            <Pane layoutY="20.0" prefHeight="84.0" prefWidth="200.0" style="-fx-background-color: rgba(0,0,0,0.3); -fx-background-radius: 0 100 0 100;" />
+            <Pane prefHeight="84.0" prefWidth="200.0" style="-fx-background-color: #243E73; -fx-background-radius: 0 100 0 100;">
+               <children>
+                  <Label layoutX="24.0" layoutY="20.0" text="Presupuesto" textFill="#fdfdfd">
+                     <font>
+                        <Font name="Impact" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="46.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Presupuesto.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children></Pane>
+            <VBox layoutY="118.0" prefHeight="286.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="37.0" prefWidth="204.0" style="-fx-background-radius: 40;" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Nuevo" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Agregar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="37.0" prefWidth="204.0" style="-fx-background-radius: 20 20 20 20;" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Eliminar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="37.0" prefWidth="204.0" style="-fx-background-radius: 20 20 20 20;" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Editar" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Editar.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="37.0" prefWidth="204.0" style="-fx-background-radius: 20 20 20 20;" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Reporte" textFill="WHITE">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="34.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/Reporte.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <HBox prefHeight="40.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <ImageView fx:id="imgHome" fitHeight="44.0" fitWidth="45.0" layoutX="42.0" layoutY="416.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../image/Home.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgHome1" fitHeight="44.0" fitWidth="45.0" layoutX="109.0" layoutY="416.0" onMouseClicked="#ventanaEmpresa" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../image/Regresar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="350.0" fitWidth="345.0" layoutX="471.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Borde.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="grpFecha" layoutX="209.0" layoutY="401.0" prefHeight="74.0" prefWidth="587.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.41740001772223" minWidth="10.0" prefWidth="141.7391364252276" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.1217047846026" minWidth="10.0" prefWidth="163.4434821283526" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.05213201223575" minWidth="10.0" prefWidth="122.7131311842806" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.12174321944434" minWidth="10.0" prefWidth="161.11296518711623" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código Presupuesto">
+               <font>
+                  <Font name="Impact" size="15.0" />
+               </font>
+            </Label>
+            <Label prefHeight="18.0" prefWidth="103.0" text="Fecha Solicitud" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Impact" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Cantidad Presupuesto" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Impact" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoPresupuesto" editable="false" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="3.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="txtCantidadPresupuesto" editable="false" onKeyTyped="#numeros" prefHeight="24.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="12.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="3.0" />
+               </GridPane.margin>
+            </TextField>
+            <Label text="Código Empresa" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Impact" size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Label>
+            <ComboBox fx:id="cmbCodigoEmpresa" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tblPresupuestos" layoutX="210.0" layoutY="25.0" onMouseClicked="#seleccionarElemento" prefHeight="356.0" prefWidth="588.0">
+        <columns>
+          <TableColumn fx:id="colCodigoPresupuesto" prefWidth="136.9043426513672" text="Cod. Presupuesto" />
+          <TableColumn fx:id="colFechaSolicitud" minWidth="2.50433349609375" prefWidth="151.09564208984375" text="Fecha Solicitud" />
+            <TableColumn fx:id="colCantidadPresupuesto" prefWidth="154.43472290039062" text="Cantidad Presupuesto" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="145.252197265625" text="Código Empresa" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

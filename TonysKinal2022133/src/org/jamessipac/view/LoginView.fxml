@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="396.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jamessipac.controller.LoginController">
+   <children>
+      <Pane prefHeight="525.0" prefWidth="396.0" style="-fx-background-color: #f88a2e;" />
+      <Pane layoutX="25.0" layoutY="22.0" prefHeight="477.0" prefWidth="350.0" style="-fx-background-color: #0d267c;">
+         <children>
+            <ImageView fitHeight="78.0" fitWidth="77.0" layoutX="137.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Usuarios.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="39.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/IrAEmpleado.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="31.0" fitWidth="33.0" layoutX="39.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Contraseña.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="473.0" fitWidth="350.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/FondoReporte.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="126.0" layoutY="118.0" text="User Login" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsuario" layoutX="88.0" layoutY="170.0" prefHeight="31.0" prefWidth="223.0" promptText="User Name" style="-fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent; -fx-border-color: white;" styleClass="TextField" stylesheets="@../resource/TonysKinal.css" />
+            <TextField fx:id="txtPassword" layoutX="93.0" layoutY="240.0" prefHeight="27.0" prefWidth="223.0" promptText="Password" style="-fx-border-width: 0px 0px 2px 0px; -fx-background-color: transparent; -fx-border-color: white;" styleClass="TextField" stylesheets="@../resource/TonysKinal.css" />
+            <Button fx:id="btnLogin" layoutX="150.0" layoutY="329.0" mnemonicParsing="false" onAction="#sesion" styleClass="button2" stylesheets="@../resource/TonysKinal.css" text="Login" />
+            <Hyperlink fx:id="lblRegistro" layoutX="125.0" layoutY="422.0" onAction="#ventanaUsuario" text="Regístrese aquí..." textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Hyperlink>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="01a47069-1d71-47fb-abe6-f3e93cc4d911">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="78"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="fondo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select
+SP.Servicios_codigoProducto,
+S.tipoServicio,
+S.fechaServicio,
+P.nombrePlato
+from servicios_has_platos SP
+inner join Servicios S
+on S.codigoServicio=SP.codigoServicio
+inner join Platos P
+]]>
+	</queryString>
+	<field name="Servicios_codigoProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image isUsingCache="true">
+				<reportElement x="0" y="0" width="572" height="752" uuid="736ff79c-36fe-4dea-a8b5-28f8b74c6aea"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<imageExpression><![CDATA[$P{fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="87" y="21" width="432" height="58" uuid="ac59db06-bbb2-4bf3-8df8-f429f2ce6f11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Impact" size="36"/>
+				</textElement>
+				<text><![CDATA[SERVICIOS-PLATOS]]></text>
+			</staticText>
+			<image isUsingCache="true">
+				<reportElement x="21" y="7" width="121" height="72" uuid="cb179ef8-4a53-4a43-b24a-1c458474d11f"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="21" y="15" width="530" height="21" backcolor="#061C74" uuid="e1a40bc1-8c52-44d4-a0c0-93141ca08f7a"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement x="21" y="85" width="530" height="1" backcolor="#061C74" uuid="2237dfb4-7b2a-44af-bc76-b4d4b199f0bf"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#061C74"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="42" y="16" width="65" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="77d0377e-d380-43d1-8595-25064f6b8247"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="42" y="54" width="65" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f25f4843-b4d1-4265-b92c-a538b8abb3ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Servicios_codigoProducto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="159" y="16" width="100" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="0fd0db78-4062-40f8-93a4-6e880a21cb6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="159" y="54" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9c284287-bf79-4f9e-8aee-e256dece0d5a"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="317" y="16" width="100" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="39a08c1b-0f55-4f55-896f-46e116fba8a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="317" y="54" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a32efec6-4754-4792-9d31-4a0ffcd61c93"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="451" y="16" width="100" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="6a633bc8-8f41-4135-92dd-87235d959ac5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha Servicio]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="451" y="54" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="b0496b0c-6f8b-4b2f-83a5-939392b93e89"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="551" y="4" width="100" height="20" uuid="5663f6d4-5b4e-43f4-803a-8190b5188729"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

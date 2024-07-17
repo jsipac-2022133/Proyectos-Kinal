@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="01a47069-1d71-47fb-abe6-f3e93cc4d911">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<parameter name="fondo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select
+SE.Servicios_codigoServicio,
+S.tipoServicio,
+E.nombresEmpleado,
+E.apellidosEmpleado,
+SE.fechaEvento,
+SE.horaEvento,
+SE.lugarEvento
+from Servicios_Has_Empleados SE
+inner join Servicios S
+on S.codigoServicio=SE.codigoServicio
+inner join Empleados E
+on E.codigoEmpleado=SE.codigoEmpleado;
+]]>
+	</queryString>
+	<field name="Servicios_codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaEvento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaEvento" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarEvento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image isUsingCache="true">
+				<reportElement x="0" y="0" width="572" height="752" uuid="736ff79c-36fe-4dea-a8b5-28f8b74c6aea"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<imageExpression><![CDATA[$P{fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="87" y="21" width="432" height="58" uuid="ac59db06-bbb2-4bf3-8df8-f429f2ce6f11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Impact" size="36"/>
+				</textElement>
+				<text><![CDATA[SERVICIOS-EMPLEADOS]]></text>
+			</staticText>
+			<image isUsingCache="true">
+				<reportElement x="21" y="7" width="121" height="72" uuid="cb179ef8-4a53-4a43-b24a-1c458474d11f"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<rectangle>
+				<reportElement x="21" y="15" width="530" height="21" backcolor="#061C74" uuid="e1a40bc1-8c52-44d4-a0c0-93141ca08f7a"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<line>
+				<reportElement x="21" y="85" width="530" height="1" backcolor="#061C74" uuid="2237dfb4-7b2a-44af-bc76-b4d4b199f0bf"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Solid" lineColor="#061C74"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="21" y="16" width="67" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="9357371b-1d51-46a9-becb-8a42104dd057"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="21" y="54" width="66" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="538487fb-3a5f-4faa-a96a-dc42c030e9b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Servicios_codigoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="88" y="16" width="102" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="503ff692-c3af-4a03-a4e4-a521e2091e43"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="88" y="54" width="104" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d8eb06bb-1e1e-47c9-827b-0459f674b235"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="190" y="16" width="109" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="58795e60-ee52-4b57-a486-ed2a85185088"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Apellidos Empleado]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="190" y="54" width="109" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f6ce3b71-e9cf-4b30-a627-ee849591138d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="299" y="16" width="76" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="97dc6323-99ca-44bb-a87f-ea484d4e75ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fecha Evento]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="299" y="54" width="76" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1aaea2b1-a7ba-49fd-8f2a-8c989730eb5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaEvento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="375" y="16" width="77" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="ae714c28-e222-4bac-a70f-311c9e5b12a3"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Hora Evento]]></text>
+			</staticText>
+			<textField pattern="HH.mm" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="375" y="54" width="77" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="836ac9d4-30be-40ce-9f84-d334da88edfd"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaEvento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="452" y="15" width="99" height="20" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="220ddfc0-8b47-4282-bd1a-2473f5ebd179"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Lugar Evento]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="452" y="54" width="99" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="3ab03af5-5424-402e-a246-ac9ac76b470b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Impact" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarEvento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="551" y="4" width="100" height="20" uuid="5663f6d4-5b4e-43f4-803a-8190b5188729"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="514.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jamessipac.controller.ProgramadorController">
+   <children>
+      <Label prefHeight="370.0" prefWidth="514.0" style="-fx-background-color: #F28705;" stylesheets="@../resource/TonysKinal.css">
+         <font>
+            <Font name="Monotype Corsiva" size="12.0" />
+         </font></Label>
+      <Label fx:id="lbl1" layoutX="15.0" layoutY="14.0" stylesheets="@../resource/TonysKinal.css" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl2" layoutX="58.0" layoutY="41.0" stylesheets="@../resource/TonysKinal.css" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl3" layoutX="14.0" layoutY="103.0" stylesheets="@../resource/TonysKinal.css" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl4" layoutX="61.0" layoutY="130.0" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl5" layoutX="17.0" layoutY="201.0" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl6" layoutX="64.0" layoutY="228.0" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+      <Pane layoutX="329.0" prefHeight="370.0" prefWidth="184.0" style="-fx-background-color: #f85305;">
+         <children>
+            <ImageView fitHeight="179.0" fitWidth="138.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/MiFoto.jpeg" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnContacto" layoutX="67.0" layoutY="241.0" mnemonicParsing="false" onAction="#handleButtonAction" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Contacto" textFill="WHITE" />
+            <Button fx:id="btnDatos" layoutX="75.0" layoutY="198.0" mnemonicParsing="false" onAction="#handleButtonAction" styleClass="button1" stylesheets="@../resource/TonysKinal.css" text="Datos" textFill="#fdfdfd" />
+            <ImageView fitHeight="47.0" fitWidth="47.0" layoutX="75.0" layoutY="309.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true" styleClass="imageView">
+               <image>
+                  <Image url="@../image/Home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="104.0" fitWidth="118.0" layoutX="235.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Kinal.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbl31" layoutX="24.0" layoutY="113.0" stylesheets="@../resource/TonysKinal.css" textFill="WHITE">
+         <font>
+            <Font name="Showcard Gothic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
